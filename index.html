@@ -33,12 +33,14 @@
                 <h2>Winter Landscapes</h2>
                 <p>Beautiful photos of the snow that looks pretty cool</p>
             </header>
-            <ul>
-                {% for index in Art.winterLandList.media -%}
-                    <img src= {{ index.src.tiny }} />
-                {% endfor -%}
-            </ul>
-
+            
+            <div style="text-align:center">
+                <ul>
+                    {% for index in Art.winterLandList.media -%}
+                        <a href="aboutUs.html"> <img src= {{ index.src.tiny }} /></a>
+                    {% endfor -%}
+                </ul>
+            </div>
         </section>
     </main>
     <footer>
