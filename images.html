@@ -1,0 +1,14 @@
+---
+layout: base
+title: Images
+
+pagination:
+    data: Art.winterLandList.media
+    size: 1
+---
+
+
+{% for image in pagination.items -%}
+    <img src= {{ image.src.large }} />
+    <h2> Photographer: {{ image.photographer }}</h2>
+{% endfor -%}
