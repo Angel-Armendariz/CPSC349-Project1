@@ -1,0 +1,14 @@
+---
+title: Winter Landscapes
+pagination:
+  data: Art.winterLandList.media
+  size: 1
+  alias: winter
+permalink: 'winter/{{ pagination.items[0].id }}/index.html'
+layout: base
+eleventyComputed:
+  title: "{{pagination.items[0].alt}}"
+  photographer: <a href="{{pagination.items[0].photographer_url}}"> {{pagination.items[0].photographer}}</a>
+---
+
+<img src="{{ pagination.items[0].src.large2x }}" alt="{{pagination.items[0].alt}}" style="width:100%">
