@@ -1,9 +1,12 @@
 ---
 layout: base
 title: Home
+
+pagination:
+    data: Art.winterLandList.media
+    size: 21
 ---
 <!-- MVP.css quickstart template: https://github.com/andybrewer/mvp/ -->
-
 <body>
     <main>
         <section>
@@ -14,10 +17,18 @@ title: Home
             
             <div style="text-align:center">
                 <ul>
-                    {% for index in Art.winterLandList.media -%}
+                    {% for index in pagination.items -%}
                         <a href="winter/{{index.id}}/index.html"> <img src= {{ index.src.tiny }} /></a>
                     {% endfor -%}
                 </ul>
+                {% if pagination.href.previous %}
+                <a href="{{ pagination.href.previous }}"><strong>Previous Page </strong></a>
+                {% else %}
+                {% endif %}
+                {% if pagination.href.next %}
+                <a href="{{ pagination.href.next }}"><strong>Next Page </strong></a>
+                {% else %}
+                {% endif %}
             </div>
         </section>
     </main>

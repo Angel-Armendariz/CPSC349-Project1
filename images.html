@@ -8,7 +8,7 @@ pagination:
 ---
 
 
-{% for image in pagination.items -%}
+{% for image in pagination.items -%} 
     <img src= {{ image.src.large }} />
-    <h2> Photographer: {{ image.photographer }}</h2>
+    <h2> Photographer: {{ image.photographer }}</h2> 
 {% endfor -%}
