@@ -7,8 +7,8 @@ on:
       - Dev-Boys_of-the-West
       
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-20.04
     steps:
         - uses: actions/checkout@v2
 
@@ -16,13 +16,12 @@ jobs:
         - name: Setup Node
           uses: actions/setup-node@v1
           with:
-            node-version: '10.x'
+            node-version: '16.17.1'
 
-
-        - run: npm ci
-
-
-        - run: npm run build
+        - name: Install dependencies and build
+          run: |
+            npm ci
+            npm run build
 
 
         - name: Deploy
@@ -30,4 +29,4 @@ jobs:
           with:
             deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
 
-            publish_dir: ./dist
+            publish_dir: ./build
