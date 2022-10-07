@@ -13,8 +13,19 @@ jobs:
     steps:
       - name: Git Checkout
         uses: actions/checkout@v2
+      - name: Build and Deploy
+        uses: ./.github/actions/deploy
+        env:
+            COMMIT_EMAIL: angela126509@gmail.com
+            COMMIT_NAME: Angel Armendariz
+            ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+            BASE_BRANCH: Dev-Boys-of-the-West
+            DEPLOY_BRANCH: Dev-Boys-of-the-West
+            BUILD_SCRIPT: yarn && yarn build
+            FOLDER: build        
       - name: Build
         uses: TartanLlama/actions-eleventy@v1.1
+        
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
