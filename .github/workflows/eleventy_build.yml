@@ -7,26 +7,15 @@ on:
       - Dev-Boys_of-the-West
       
 jobs:
-  build:
-    runs-on: ubuntu-20.04
+  build-deploy:
+    runs-on: ubuntu-latest
     steps:
-        - uses: actions/checkout@v2
-
-
-        - name: Setup Node
-          uses: actions/setup-node@v1
-          with:
-            node-version: '16.17.1'
-
-        - name: Install dependencies and build
-          run: |
-            npm ci
-            npm run build
-
-
-        - name: Deploy
-          uses: peaceiris/actions-gh-pages@v3
-          with:
-            deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-
-            publish_dir: ./build
+      - name: Git Checkout
+        uses: actions/checkout@v2
+      - name: Build
+        uses: TartanLlama/actions-eleventy@v1.1
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./_site 
+          github_token: ${{ secrets.GITHUB_TOKEN }}
