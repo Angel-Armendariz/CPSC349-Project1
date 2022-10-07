@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@latest
       - name: Build and Deploy
-        uses: ./.github/actions/deploy
+        uses: ./.github/actions/deploy@latest
         env:
             COMMIT_EMAIL: angela126509@gmail.com
             COMMIT_NAME: Angel Armendariz
