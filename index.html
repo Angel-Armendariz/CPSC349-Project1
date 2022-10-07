@@ -18,7 +18,7 @@ pagination:
             <div style="text-align:center">
                 <ul>
                     {% for index in pagination.items -%}
-                        <a href="winter/{{index.id}}/index.html"> <img src= {{ index.src.tiny }} /></a>
+                        <a href="/winter/{{index.id}}/index.html"> <img src= {{ index.src.tiny }} /></a>
                     {% endfor -%}
                 </ul>
                 {% if pagination.href.previous %}
@@ -32,14 +32,6 @@ pagination:
             </div>
         </section>
     </main>
-    <footer>
-        <hr>
-        <p>
-            <small>
-                <a href="https://www.pexels.com">Photos provided by Pexels</a>
-            </small>
-        </p>
-    </footer>
 </body>
 
 </html>

@@ -8,7 +8,6 @@ permalink: 'winter/{{ pagination.items[0].id }}/index.html'
 layout: base
 eleventyComputed:
   title: "{{pagination.items[0].alt}}"
-  photographer: <a href="{{pagination.items[0].photographer_url}}"> {{pagination.items[0].photographer}}</a>
 ---
 
 
@@ -19,7 +18,7 @@ eleventyComputed:
  }
 </style>
 <div style="text-align:center">
-  <h2><a href="{{pagination.items[0].photographer_url}}"> {{pagination.items[0].photographer}}</a></h2>
+  <h2>Photographed by : <a href="{{pagination.items[0].photographer_url}}"> {{pagination.items[0].photographer}}</a></h2>
 </div>
 <img src="{{ pagination.items[0].src.large2x }}" alt="{{pagination.items[0].alt}}" style="width:100%">
 
