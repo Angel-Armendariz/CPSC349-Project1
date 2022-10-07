@@ -24,7 +24,8 @@
   },
   
 "scripts": {
-    "build": "eleventy"
+    "start": "eleventy --serve",
+    "build": "NODE_ENV=production eleventy --pathprefix 'cpsc349-project1'"
 }
 
 
