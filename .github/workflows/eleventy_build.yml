@@ -11,7 +11,7 @@ jobs:
     name: Eleventy Build
     runs-on: ubuntu-latest
     steps:
-      - name: Git Checkout
+      - name: Checkout
         uses: actions/checkout@master
       - name: Build and Deploy
         uses: ./.github/actions/deploy
