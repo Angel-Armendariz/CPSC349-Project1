@@ -18,7 +18,7 @@ pagination:
             <div style="text-align:center">
                 <ul>
                     {% for index in pagination.items -%}
-                        <a href="/winter/{{index.id}}/index.html"> <img src= {{ index.src.tiny }} /></a>
+                        <a href="/cpsc349-project1/winter/{{index.id}}/index.html"> <img src= {{ index.src.tiny }} /></a>
                     {% endfor -%}
                 </ul>
                 {% if pagination.href.previous %}
