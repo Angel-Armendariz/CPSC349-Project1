@@ -19,7 +19,7 @@ pagination:
                 <ul>
                     <li>
                     {% for index in pagination.items -%}
-                        <a href="/cpsc349-project1/winter/{{index.id}}/index.html"> <img src= {{ index.src.tiny }} /></a>
+                        <a href="/cpsc349-project1/winter/{{index.id}}/index.html"> <img src= "{{ index.src.tiny }}" alt="{{pagination.items[0].alt}}" /></a>
                     {% endfor -%}
                     </li>
                 </ul>
