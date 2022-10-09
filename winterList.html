@@ -10,15 +10,9 @@ eleventyComputed:
   title: "{{pagination.items[0].alt}}"
 ---
 
-
-<style>
- img{
-   border-bottom: 5px outset {{  pagination.items[0].avg_color}};
-   border: 5px outset {{  pagination.items[0].avg_color}};
- }
-</style>
 <div style="text-align:center">
   <h2>Photographed by : <a href="{{pagination.items[0].photographer_url}}"> {{pagination.items[0].photographer}}</a></h2>
 </div>
-<img src="{{ pagination.items[0].src.large2x }}" alt="{{pagination.items[0].alt}}" style="width:100%">
+<img style="border-bottom: 5px outset {{  pagination.items[0].avg_color}};border: 5px outset {{  pagination.items[0].avg_color}};width: 100%;"
+ src="{{ pagination.items[0].src.large2x }}" alt="{{pagination.items[0].alt}}" >
 
