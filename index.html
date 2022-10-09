@@ -7,33 +7,29 @@ pagination:
     size: 21
 ---
 <!-- MVP.css quickstart template: https://github.com/andybrewer/mvp/ -->
-<body>
-    <main>
-        <section>
-            <header>
-                <h2>Winter Landscapes</h2>
-                <p>Beautiful photos of the snow that look pretty cool</p>
-            </header>
-            
-            <div style="text-align:center">
-                <ul>
-                    <li>
-                    {% for index in pagination.items -%}
-                        <a href="/cpsc349-project1/winter/{{index.id}}/index.html"> <img src= "{{ index.src.tiny }}" alt="{{pagination.items[0].alt}}" /></a>
-                    {% endfor -%}
-                    </li>
-                </ul>
-                {% if pagination.href.previous %}
-                <a href="{{ pagination.href.previous }}"><strong>Previous Page </strong></a>
-                {% else %}
-                {% endif %}
-                {% if pagination.href.next %}
-                <a href="{{ pagination.href.next }}"><strong>Next Page </strong></a>
-                {% else %}
-                {% endif %}
-            </div>
-        </section>
-    </main>
-</body>
+    <section>
+        <header>
+            <h2>Winter Landscapes</h2>
+            <p>Beautiful photos of the snow that look pretty cool</p>
+        </header>
+        
+        <div style="text-align:center">
+            <ul>
+                <li>
+                {% for index in pagination.items -%}
+                    <a href="/cpsc349-project1/winter/{{index.id}}/index.html"> <img src= "{{ index.src.tiny }}" alt="{{pagination.items[0].alt}}" /></a>
+                {% endfor -%}
+                </li>
+            </ul>
+            {% if pagination.href.previous %}
+            <a href="{{ pagination.href.previous }}"><strong>Previous Page </strong></a>
+            {% else %}
+            {% endif %}
+            {% if pagination.href.next %}
+            <a href="{{ pagination.href.next }}"><strong>Next Page </strong></a>
+            {% else %}
+            {% endif %}
+        </div>
+    </section>
 
-</html>
+
